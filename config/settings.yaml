@@ -1,0 +1,19 @@
+patterns:
+  peak_distance: 4
+  peak_prominence_pct: 0.006
+  shoulder_tolerance: 0.06
+  neckline_tolerance: 0.08
+  double_tolerance: 0.035
+  min_confidence: 0.55
+  cup_window_min: 45
+  cup_window_max: 100
+similarity:
+  lookback: 40
+  top_k: 20
+  forward_bars: 10
+  bullish_threshold: 0.01
+  bearish_threshold: -0.01
+dashboard:
+  default_rows: 180
+  replay_step: 2
+  refresh_ms: 2000
