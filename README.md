@@ -5,7 +5,7 @@
 PatternAlpha Live v2 is a Streamlit-based Pattern Recognition course project for analysing Indian equity-market OHLCV data using Upstox. The application allows the user to search for an NSE equity directly inside Streamlit, choose a timeframe and history range, and analyse historical or current intraday candles without manually editing instrument keys or CSV paths.
 
 > **Academic purpose:** PatternAlpha Live is a Pattern Recognition and financial time-series analysis project. It is not an automated trading strategy, a stock-recommendation engine, or financial advice.
-
+Test the working version: https://patternalpha-live-itf2nq6xzi6ird4wka3wwc.streamlit.app/
 ---
 
 ## 1. Main Features
