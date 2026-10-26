@@ -26,8 +26,12 @@ def make_chart(df,patterns=None,candle_patterns=None,show_ema=True,show_bb=False
         valid=[x for x in rec if x['index']<len(df)]
         fig.add_trace(go.Scatter(x=[df.timestamp.iloc[x['index']] for x in valid],y=[float(df.high.iloc[x['index']])*1.002 for x in valid],mode='markers+text',text=[x['pattern'] for x in valid],textposition='top center',marker={'symbol':'diamond','size':7},name='Candlestick pattern'),row=1,col=1)
     fig.update_layout(height=760,xaxis_rangeslider_visible=False,hovermode='x unified',margin={'l':20,'r':20,'t':45,'b':20},legend={'orientation':'h','y':1.02,'x':0},title='PatternAlpha Live — annotated market structure')
-    fig.update_xaxes(type="category")
+    fig.update_xaxes(
+    rangebreaks=[
+        dict(bounds=["sat", "mon"]),          # remove weekends
+        dict(bounds=[15.5, 9.25], pattern="hour")   # remove non-trading hours for NSE
+    ],
+    showgrid=False)
 
-    fig.update_xaxes(type="category", nticks=12)
     fig.update_yaxes(title_text='Price',row=1,col=1); fig.update_yaxes(title_text='Volume',row=2,col=1); fig.update_yaxes(title_text='RSI',range=[0,100],row=3,col=1)
     return fig
